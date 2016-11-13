@@ -1,0 +1,55 @@
+$barColorA: #3a7bd3;
+$barColorB: #4d71da;
+$barBgColor: #294d5a;
+$bgColor: #263827;
+
+$barHeight: 30px;
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+
+body {
+  padding: .1px;
+  height: 100vh;
+}
+.graph {
+  padding: 1em 2em 1.5em;
+  background-color: $bgColor;
+  width: 50%;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 1s linear;
+  box-shadow: 0 0 10px 2px transparentize(black, .7);
+}
+.name {
+  color: #fff;
+  top: 0;
+  font-family: Ubuntu, sans-serif;
+  text-transform: uppercase;
+  margin-top: 1.5em;
+  .score {
+    color: transparentize(#fff, .5);
+  }
+}
+.bar {
+  width: 100%;
+  height: $barHeight;
+  background-color: $barBgColor;
+  margin: 1em 0;
+  border-radius: $barHeight;
+  position: relative;
+  overflow: hidden;
+  .infoBar {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: $barHeight;
+    background: linear-gradient(to right, $barColorA, $barColorB);
+    border-radius: $barHeight $barHeight $barHeight $barHeight;
+    box-shadow: 0 0 20px 5px transparentize($bgColor, .3);
+  }
+}
